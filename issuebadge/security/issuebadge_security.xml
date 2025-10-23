@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- IssueBadge Security Category -->
+        <record id="module_category_issuebadge" model="ir.module.category">
+            <field name="name">IssueBadge</field>
+            <field name="description">Manage badge issuance and certificates</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- IssueBadge User Group -->
+        <record id="group_issuebadge_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_issuebadge"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">Users can issue badges and view their issued badges</field>
+        </record>
+
+        <!-- IssueBadge Manager Group -->
+        <record id="group_issuebadge_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_category_issuebadge"/>
+            <field name="implied_ids" eval="[(4, ref('group_issuebadge_user'))]"/>
+            <field name="comment">Managers can configure API settings and manage badge templates</field>
+        </record>
+
+    </data>
+</odoo>

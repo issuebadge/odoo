@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Send Badge Wizard Form -->
+        <record id="view_issuebadge_send_wizard_form" model="ir.ui.view">
+            <field name="name">issuebadge.send.wizard.form</field>
+            <field name="model">issuebadge.send.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Issue Badge">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Issue a Badge</h1>
+                        </div>
+                        <group>
+                            <group string="Badge Template">
+                                <field name="badge_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+                            <group string="Recipient">
+                                <field name="partner_id" placeholder="Select an existing contact (optional)"/>
+                                <field name="recipient_name" placeholder="Enter recipient's full name"/>
+                                <field name="recipient_email" placeholder="email@example.com (optional)"/>
+                            </group>
+                        </group>
+                        <group string="Additional Information">
+                            <field name="notes" placeholder="Add any notes about this badge issuance..." nolabel="1"/>
+                        </group>
+                        <div class="alert alert-info" role="alert">
+                            <strong>Note:</strong> After issuing, the recipient will receive a unique certificate URL that can be shared and verified.
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button name="action_issue_badge"
+                                string="Issue Badge"
+                                type="object"
+                                class="btn-primary"
+                                data-hotkey="q"/>
+                        <button string="Cancel"
+                                class="btn-secondary"
+                                special="cancel"
+                                data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Send Badge Wizard Action -->
+        <record id="action_issuebadge_send_wizard" model="ir.actions.act_window">
+            <field name="name">Issue Badge</field>
+            <field name="res_model">issuebadge.send.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_issuebadge_badge"/>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>

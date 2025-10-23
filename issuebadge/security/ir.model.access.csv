@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_issuebadge_settings_manager,issuebadge.settings.manager,model_issuebadge_settings,group_issuebadge_manager,1,1,1,1
+access_issuebadge_settings_user,issuebadge.settings.user,model_issuebadge_settings,group_issuebadge_user,1,0,0,0
+access_issuebadge_badge_manager,issuebadge.badge.manager,model_issuebadge_badge,group_issuebadge_manager,1,1,1,1
+access_issuebadge_badge_user,issuebadge.badge.user,model_issuebadge_badge,group_issuebadge_user,1,0,0,0
+access_issuebadge_issue_manager,issuebadge.issue.manager,model_issuebadge_issue,group_issuebadge_manager,1,1,1,1
+access_issuebadge_issue_user,issuebadge.issue.user,model_issuebadge_issue,group_issuebadge_user,1,1,1,0
+access_issuebadge_send_wizard_user,issuebadge.send.wizard.user,model_issuebadge_send_wizard,group_issuebadge_user,1,1,1,1

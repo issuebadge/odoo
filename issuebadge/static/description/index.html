@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IssueBadge - Certificate Generator for Odoo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 10px 0 0 0;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .feature-box h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        .screenshot {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .screenshot img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .cta-box {
+            background: #667eea;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta-box h3 {
+            margin-top: 0;
+            color: white;
+        }
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 20px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .use-case {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🏆 IssueBadge Certificate Generator</h1>
+    <p>Issue Beautiful Digital Certificates & Badges Directly from Odoo</p>
+</div>
+
+<div class="section">
+    <h2>Transform Recognition with Professional Digital Certificates</h2>
+    <p>
+        IssueBadge seamlessly integrates with your Odoo system, enabling you to issue beautiful, verifiable
+        digital certificates and badges to employees, students, customers, or partners with just a few clicks.
+    </p>
+</div>
+
+<div class="section">
+    <h2>✨ Key Features</h2>
+    <div class="feature-grid">
+        <div class="feature-box">
+            <h3>🔌 Easy Integration</h3>
+            <p>Simple Bearer token authentication. Connect your IssueBadge account in seconds.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🎨 Beautiful Templates</h3>
+            <p>Sync your custom badge templates from IssueBadge and manage them in Odoo.</p>
+        </div>
+        <div class="feature-box">
+            <h3>⚡ Quick Issuance</h3>
+            <p>Issue badges in one click with recipient name and optional email.</p>
+        </div>
+        <div class="feature-box">
+            <h3>📊 Full Tracking</h3>
+            <p>Track all issued badges with searchable history and analytics.</p>
+        </div>
+        <div class="feature-box">
+            <h3>👥 Contact Integration</h3>
+            <p>Link badges to Odoo contacts for better organization.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🏢 Multi-Company</h3>
+            <p>Separate API configurations for each company in your system.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🎯 Perfect Use Cases</h2>
+    <div class="use-case">
+        <strong>🎓 Employee Training:</strong> Issue certificates when employees complete training courses
+    </div>
+    <div class="use-case">
+        <strong>📚 Education:</strong> Award badges for course completions and achievements
+    </div>
+    <div class="use-case">
+        <strong>🏆 Sales Recognition:</strong> Reward top performers with achievement badges
+    </div>
+    <div class="use-case">
+        <strong>✅ Project Milestones:</strong> Celebrate project completions with certificates
+    </div>
+    <div class="use-case">
+        <strong>🔒 Compliance:</strong> Track and issue compliance certifications (ISO, GDPR, etc.)
+    </div>
+    <div class="use-case">
+        <strong>🎉 Event Participation:</strong> Issue attendance or participation certificates
+    </div>
+</div>
+
+<div class="section">
+    <h2>🚀 How It Works</h2>
+    <ol class="steps">
+        <li>
+            <strong>Sign Up & Get API Key</strong><br>
+            Create an account at <a href="https://app.issuebadge.com" target="_blank">app.issuebadge.com</a>
+            and generate your API key from the Developer Panel
+        </li>
+        <li>
+            <strong>Configure in Odoo</strong><br>
+            Go to IssueBadge > Configuration > Settings and enter your API key
+        </li>
+        <li>
+            <strong>Sync Badge Templates</strong><br>
+            Click "Sync Badges" to fetch your badge templates from IssueBadge
+        </li>
+        <li>
+            <strong>Issue Badges</strong><br>
+            Select a badge template, enter recipient details, and click "Issue Badge"
+        </li>
+        <li>
+            <strong>Share & Verify</strong><br>
+            Recipients get a unique certificate URL that can be shared on LinkedIn, resumes, or portfolios
+        </li>
+    </ol>
+</div>
+
+<div class="section">
+    <h2>💼 What You Get</h2>
+    <ul>
+        <li>✅ Unlimited badge issuance (subject to your IssueBadge plan)</li>
+        <li>✅ Multi-company support for enterprise users</li>
+        <li>✅ Full badge issuance history with search and filters</li>
+        <li>✅ Integration with Odoo contacts</li>
+        <li>✅ User permissions (User & Manager roles)</li>
+        <li>✅ Public certificate URLs for verification</li>
+        <li>✅ Email support</li>
+        <li>✅ Regular updates and improvements</li>
+    </ul>
+</div>
+
+<div class="cta-box">
+    <h3>Ready to Start Issuing Professional Certificates?</h3>
+    <p>Install now and issue your first badge in under 5 minutes!</p>
+    <a href="https://app.issuebadge.com" target="_blank" class="button">Get Your API Key →</a>
+    <a href="mailto:support@issuebadge.com" class="button">Contact Support</a>
+</div>
+
+<div class="section">
+    <h2>📋 Requirements</h2>
+    <ul>
+        <li>Odoo 17.0 or later (compatible with earlier versions)</li>
+        <li>IssueBadge account (free sign-up at <a href="https://app.issuebadge.com" target="_blank">app.issuebadge.com</a>)</li>
+        <li>Internet connection for API calls</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>🔒 Privacy & Security</h2>
+    <p>
+        Your API key is stored securely in your Odoo database. All communication with IssueBadge API
+        uses HTTPS encryption. We never store sensitive recipient data beyond what you provide.
+    </p>
+</div>
+
+<div class="section">
+    <h2>📞 Support & Documentation</h2>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@issuebadge.com">support@issuebadge.com</a></li>
+        <li><strong>Website:</strong> <a href="https://issuebadge.com" target="_blank">issuebadge.com</a></li>
+        <li><strong>Documentation:</strong> <a href="https://docs.issuebadge.com" target="_blank">docs.issuebadge.com</a></li>
+    </ul>
+</div>
+
+<div class="section" style="text-align: center; color: #888; font-size: 0.9em; margin-top: 60px;">
+    <p>Made with ❤️ by the IssueBadge Team</p>
+    <p>© 2024 IssueBadge. All rights reserved.</p>
+</div>
+
+</body>
+</html>

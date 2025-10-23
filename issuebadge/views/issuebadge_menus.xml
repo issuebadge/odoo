@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Main Menu -->
+        <menuitem id="menu_issuebadge_root"
+                  name="IssueBadge"
+                  sequence="10"
+                  web_icon="issuebadge,static/description/icon.png"
+                  groups="group_issuebadge_user"/>
+
+        <!-- Operations Menu -->
+        <menuitem id="menu_issuebadge_operations"
+                  name="Operations"
+                  parent="menu_issuebadge_root"
+                  sequence="10"/>
+
+        <!-- Issue Badge (Quick Action) -->
+        <menuitem id="menu_issuebadge_send"
+                  name="Issue Badge"
+                  parent="menu_issuebadge_operations"
+                  action="action_issuebadge_send_wizard"
+                  sequence="1"/>
+
+        <!-- Badge Templates -->
+        <menuitem id="menu_issuebadge_badge"
+                  name="Badge Templates"
+                  parent="menu_issuebadge_operations"
+                  action="action_issuebadge_badge"
+                  sequence="10"/>
+
+        <!-- Issued Badges -->
+        <menuitem id="menu_issuebadge_issue"
+                  name="Issued Badges"
+                  parent="menu_issuebadge_operations"
+                  action="action_issuebadge_issue"
+                  sequence="20"/>
+
+        <!-- Configuration Menu -->
+        <menuitem id="menu_issuebadge_configuration"
+                  name="Configuration"
+                  parent="menu_issuebadge_root"
+                  sequence="100"
+                  groups="group_issuebadge_manager"/>
+
+        <!-- Settings -->
+        <menuitem id="menu_issuebadge_settings"
+                  name="Settings"
+                  parent="menu_issuebadge_configuration"
+                  action="action_issuebadge_settings"
+                  sequence="10"/>
+
+    </data>
+</odoo>

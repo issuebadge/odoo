@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Settings Form View -->
+        <record id="view_issuebadge_settings_form" model="ir.ui.view">
+            <field name="name">issuebadge.settings.form</field>
+            <field name="model">issuebadge.settings</field>
+            <field name="arch" type="xml">
+                <form string="IssueBadge Settings">
+                    <header>
+                        <button name="action_test_connection"
+                                string="Test Connection"
+                                type="object"
+                                class="btn-primary"
+                                help="Verify your API key is valid"/>
+                        <button name="action_sync_badges"
+                                string="Sync Badges"
+                                type="object"
+                                class="btn-secondary"
+                                help="Fetch badge templates from IssueBadge"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                    type="action"
+                                    name="%(action_issuebadge_badge)d"
+                                    icon="fa-trophy">
+                                <field string="Badges" name="id" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="company_id" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="API Configuration">
+                                <field name="api_key" password="True" placeholder="Enter your IssueBadge API Bearer Token"/>
+                                <field name="api_url"/>
+                                <field name="active"/>
+                            </group>
+                            <group string="Information">
+                                <field name="last_sync_date" readonly="1"/>
+                            </group>
+                        </group>
+                        <div class="alert alert-info" role="alert">
+                            <h4>How to get your API Key:</h4>
+                            <ol>
+                                <li>Sign up or log in at <a href="https://app.issuebadge.com" target="_blank">app.issuebadge.com</a></li>
+                                <li>Go to <strong>Settings</strong> » <strong>Developer Panel</strong></li>
+                                <li>Click <strong>Generate API KEY</strong> and copy the token</li>
+                                <li>Paste the token in the API Key field above</li>
+                                <li>Click <strong>Test Connection</strong> to verify</li>
+                            </ol>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Settings Tree View -->
+        <record id="view_issuebadge_settings_tree" model="ir.ui.view">
+            <field name="name">issuebadge.settings.tree</field>
+            <field name="model">issuebadge.settings</field>
+            <field name="arch" type="xml">
+                <tree string="IssueBadge Settings">
+                    <field name="company_id"/>
+                    <field name="api_url"/>
+                    <field name="last_sync_date"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Settings Action -->
+        <record id="action_issuebadge_settings" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">issuebadge.settings</field>
+            <field name="view_mode">form,tree</field>
+            <field name="context">{'create': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Configure your IssueBadge API
+                </p>
+                <p>
+                    Click <b>Create</b> to set up your IssueBadge API key and start issuing badges.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
