@@ -1,4 +1,4 @@
-# IssueBadge - Certificate Generator for Odoo
+# IssueBadge - Bulk Certificate Generator for Odoo
 
 ![IssueBadge Logo](static/description/icon.png)
 
@@ -154,7 +154,7 @@ Assign permissions via: `Settings > Users & Companies > Users`
 
 - **Email**: support@issuebadge.com
 - **Website**: [issuebadge.com](https://issuebadge.com)
-- **Documentation**: [docs.issuebadge.com](https://docs.issuebadge.com)
+- **Documentation**: 
 
 ## 📄 License
 
